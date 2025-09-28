@@ -1,4 +1,5 @@
-import { Box, Typography, Grid, Card, CardContent, CardActions, Button } from '@mui/material';
+import { Box, Typography, Grid } from '@mui/material';
+import ProjectCard from './cards/ProjectCard';
 
 const projects = [
     {
@@ -25,39 +26,31 @@ const Projects = () => {
             id="projects"
             sx={{
                 py: 6,
-                px: 3,
-                backgroundColor: '#f5f5f5',
-                borderRadius: '16px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                mt: 6,
+                px: 2,
+                width: '90%',
+                maxWidth: 1200,
+                mx: 'auto',
+                mt: 8,
             }}
         >
-            <Typography variant="h4" component="h2" align="center" gutterBottom>
+            <Typography
+                variant="h4"
+                component="h2"
+                align="center"
+                gutterBottom
+                sx={{ color: '#e81cff' }}
+            >
                 Proyectos
             </Typography>
 
             <Grid container spacing={4} justifyContent="center">
                 {projects.map((project, index) => (
-                    <Grid item xs={12} sm={6} md={4} key={index}>
-                        <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                            <CardContent>
-                                <Typography variant="h6" gutterBottom>
-                                    {project.title}
-                                </Typography>
-                                <Typography variant="body2">{project.description}</Typography>
-                            </CardContent>
-                            <CardActions sx={{ mt: 'auto' }}>
-                                <Button
-                                    size="small"
-                                    color="primary"
-                                    href={project.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Ver en GitHub
-                                </Button>
-                            </CardActions>
-                        </Card>
+                    <Grid item key={index}>
+                        <ProjectCard
+                            title={project.title}
+                            description={project.description}
+                            link={project.link}
+                        />
                     </Grid>
                 ))}
             </Grid>

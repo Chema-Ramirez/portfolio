@@ -1,128 +1,217 @@
-// src/components/Navbar.jsx
-import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
+import { useState } from 'react';
+import {
+    AppBar,
+    Toolbar,
+    Typography,
+    Button,
+    Stack,
+    IconButton,
+    Drawer,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemText,
+    Box,
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import Divider from '@mui/material/Divider';
 import CloseIcon from '@mui/icons-material/Close';
+import { Link as ScrollLink } from 'react-scroll';
 
+const navItems = ['aboutme', 'education', 'projects', 'contact'];
 
-const sections = [
-    { id: 'about', label: 'Sobre mí' },
-    { id: 'education', label: 'Educación' },
-    { id: 'projects', label: 'Proyectos' },
-    { id: 'contact', label: 'Contacto' },
-];
 
 const Navbar = () => {
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-    const [drawerOpen, setDrawerOpen] = React.useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
-    const handleScroll = (id) => {
-        const section = document.getElementById(id);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-        setDrawerOpen(false);
-    };
+    const drawer = (
+        <Box
+            sx={{
+                width: 250,
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-start',
+                p: 1,
+                backgroundColor: '#1a1a1a',
+            }}
+        >
+            <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
+                <IconButton
+                    onClick={handleDrawerToggle}
+                    sx={{ color: 'white' }}
+                    aria-label="Cerrar menú"
+                >
+                    <CloseIcon />
+                </IconButton>
+            </Box>
+
+            <Typography
+                variant="h6"
+                sx={{
+                    my: 2,
+                    textAlign: 'center',
+                    background: 'linear-gradient(45deg, #fc00ff, #00dbde)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    fontWeight: 'bold',
+                }}
+            >
+                Mi Portfolio
+            </Typography>
+
+            <List>
+                {navItems.map((item) => (
+                    <ListItem key={item} disablePadding>
+                        <ScrollLink
+                            to={item}
+                            smooth={true}
+                            duration={500}
+                            offset={-70}
+                            onClick={handleDrawerToggle}
+                        >
+                            <ListItemButton
+                                sx={{
+                                    textAlign: 'center',
+                                    color: '#ffffff',
+                                    '&:hover': {
+                                        backgroundColor: '#2a2a2a',
+                                    },
+                                }}
+                            >
+                                <ListItemText
+                                    primary={
+                                        item.charAt(0).toUpperCase() + item.slice(1)
+                                    }
+                                />
+                            </ListItemButton>
+                        </ScrollLink>
+                    </ListItem>
+                ))}
+            </List>
+        </Box>
+    );
 
     return (
-        <AppBar
-            position="fixed"
-            color="primary"
-            elevation={2}
-            sx={{ top: '32px', zIndex: 1200 }}
-        >
-            <Toolbar sx={{ justifyContent: 'space-between' }}>
-                <Typography
-                    variant="h6"
-                    sx={{ cursor: 'pointer' }}
-                    onClick={() => handleScroll('about')}
+        <>
+            <AppBar
+                component="nav"
+                position="fixed"
+                sx={{
+                    backgroundColor: '#000000',
+                    boxShadow: '0 4px 20px #00000033',
+                    backdropFilter: 'blur(6px)',
+                    zIndex: 1000,
+                }}
+            >
+                <Toolbar
+                    sx={{
+                        justifyContent: 'space-between',
+                        px: { xs: 2, sm: 3, md: 6 },
+                        maxWidth: '1200px',
+                        margin: '0 auto',
+                        width: '100%',
+                    }}
                 >
-                    Mi Portfolio
-                </Typography>
+                    <IconButton
+                        color="inherit"
+                        edge="start"
+                        onClick={handleDrawerToggle}
+                        sx={{
+                            display: { md: 'none' },
+                            mr: 1,
+                        }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
 
+                    <Typography
+                        variant="h6"
+                        sx={{
+                            background: 'linear-gradient(45deg, #fc00ff, #00dbde)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                            fontWeight: 'bold',
+                            flexGrow: 1,
+                        }}
+                    >
+                        Mi Portfolio
+                    </Typography>
 
-                {isMobile ? (
-                    <>
-                        <IconButton
-                            edge="end"
-                            color="inherit"
-                            onClick={() => setDrawerOpen(true)}
-                            aria-label="menu"
-                            size="large"
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Drawer
-                            anchor="right"
-                            open={drawerOpen}
-                            onClose={() => setDrawerOpen(false)}
-                            slotProps={{
-                                paper: {
-                                    sx: {
-                                        zIndex: 1400,
-                                    },
-                                },
-                            }}
-                        >
-                            <Box
-                                sx={{ width: 250 }}
-                                role="presentation"
-                            >
-                                {/* Nueva sección: botón de cerrar */}
-                                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', p: 2 }}>
-                                    <Typography variant="h6">Navegación</Typography>
-                                    <IconButton onClick={() => setDrawerOpen(false)} aria-label="Cerrar">
-                                        <CloseIcon />
-                                    </IconButton>
-                                </Box>
+                    <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+                        <Stack direction="row" spacing={2}>
+                            {navItems.map((section) => (
+                                <ScrollLink
+                                    key={section}
+                                    to={section}
+                                    smooth={true}
+                                    duration={500}
+                                    offset={-70}
+                                >
+                                    <Button
+                                        sx={{
+                                            position: 'relative',
+                                            color: '#ffffff',
+                                            textTransform: 'none',
+                                            fontWeight: 'bold',
+                                            px: 1.5,
+                                            overflow: 'hidden',
+                                            transition: 'all 0.3s ease',
 
-                                <Divider />
+                                            '&::before': {
+                                                content: '""',
+                                                position: 'absolute',
+                                                bottom: 0,
+                                                left: 0,
+                                                width: 0,
+                                                height: '2px',
+                                                background:
+                                                    'linear-gradient(90deg, #fc00ff, #00dbde)',
+                                                transition: 'width 0.3s ease',
+                                            },
 
-                                {/* Lista de secciones */}
-                                <List>
-                                    {sections.map((section) => (
-                                        <ListItem
-                                            button
-                                            key={section.id}
-                                            onClick={() => handleScroll(section.id)}
-                                        >
-                                            <ListItemText primary={section.label} />
-                                        </ListItem>
-                                    ))}
-                                </List>
-                            </Box>
-                        </Drawer>
+                                            '&:hover': {
+                                                background: 'none',
+                                                backgroundImage:
+                                                    'linear-gradient(45deg, #fc00ff, #00dbde)',
+                                                WebkitBackgroundClip: 'text',
+                                                WebkitTextFillColor: 'transparent',
+                                            },
 
-                    </>
-                ) : (
-                    <Box>
-                        {sections.map((section) => (
-                            <Button
-                                key={section.id}
-                                color="inherit"
-                                onClick={() => handleScroll(section.id)}
-                            >
-                                {section.label}
-                            </Button>
-                        ))}
+                                            '&:hover::before': {
+                                                width: '100%',
+                                            },
+                                        }}
+                                    >
+                                        {section.charAt(0).toUpperCase() + section.slice(1)}
+                                    </Button>
+                                </ScrollLink>
+                            ))}
+                        </Stack>
                     </Box>
-                )}
-            </Toolbar>
-        </AppBar>
+                </Toolbar>
+            </AppBar>
+
+            <Drawer
+                anchor="right"
+                open={mobileOpen}
+                onClose={handleDrawerToggle}
+                ModalProps={{ keepMounted: true }}
+                sx={{
+                    display: { xs: 'block', md: 'none' },
+                    '& .MuiDrawer-paper': {
+                        boxSizing: 'border-box',
+                        width: 250,
+                        backgroundColor: '#1a1a1a',
+                        color: '#fff',
+                    },
+                }}
+            >
+                {drawer}
+            </Drawer>
+        </>
     );
 };
+
 
 export default Navbar;

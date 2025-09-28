@@ -4,19 +4,39 @@ const Footer = () => {
     return (
         <Box
             component="footer"
-            id="contact"
             sx={{
-                mt: 6,
+                mt: 4,
                 py: 4,
                 px: 3,
-                backgroundColor: '#f5f5f5',
-                borderRadius: '16px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                background: 'linear-gradient(135deg, #000000, #1a1a1a)',
+                color: '#ffffff',
+                borderTopLeftRadius: '32px',
+                borderTopRightRadius: '32px',
                 textAlign: 'center',
+                width: '100%',
+                maxWidth: 1800,
+                mx: 'auto',
+                boxShadow: '0 -4px 20px rgba(0,0,0,0.5)',
             }}
         >
             <Typography variant="body1" gutterBottom>
-                Contacto: <Link href="mailto:tuemail@ejemplo.com">tuemail@ejemplo.com</Link>
+                Contacto:{' '}
+                <Link
+                    href="mailto:tuemail@ejemplo.com"
+                    underline="hover"
+                    sx={{
+                        background: 'linear-gradient(45deg, #fc00ff, #00dbde)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        fontWeight: 'bold',
+                        transition: '0.3s',
+                        '&:hover': {
+                            opacity: 0.8,
+                        },
+                    }}
+                >
+                    tuemail@ejemplo.com
+                </Link>
             </Typography>
 
             <Stack
@@ -25,16 +45,53 @@ const Footer = () => {
                 justifyContent="center"
                 sx={{ mt: 2, flexWrap: 'wrap' }}
             >
-                <Link href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer">
+                <Link
+                    href="https://github.com/tuusuario"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    underline="hover"
+                    sx={{
+                        background: 'linear-gradient(45deg, #fc00ff, #00dbde)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        fontWeight: 'bold',
+                        transition: '0.3s',
+                        '&:hover': {
+                            opacity: 0.8,
+                        },
+                    }}
+                >
                     GitHub
                 </Link>
-                <Link href="https://linkedin.com/in/tuusuario" target="_blank" rel="noopener noreferrer">
+                <Link
+                    href="https://linkedin.com/in/tuusuario"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    underline="hover"
+                    sx={{
+                        background: 'linear-gradient(45deg, #fc00ff, #00dbde)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        fontWeight: 'bold',
+                        transition: '0.3s',
+                        '&:hover': {
+                            opacity: 0.8,
+                        },
+                    }}
+                >
                     LinkedIn
                 </Link>
             </Stack>
 
-            <Typography variant="caption" display="block" sx={{ mt: 3 }}>
-                &copy; {new Date().getFullYear()} Nombre. Todos los derechos reservados.
+            <Typography
+                variant="caption"
+                display="block"
+                sx={{
+                    mt: 3,
+                    color: '#888888',
+                }}
+            >
+                &copy; {new Date().getFullYear()} Tu Nombre. Todos los derechos reservados.
             </Typography>
         </Box>
     );

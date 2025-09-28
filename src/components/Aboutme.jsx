@@ -1,4 +1,11 @@
-import { Box, Grid, Avatar, Typography, useMediaQuery, useTheme } from '@mui/material';
+import {
+    Box,
+    Grid,
+    Avatar,
+    Typography,
+    useMediaQuery,
+    useTheme
+} from '@mui/material';
 
 const AboutMe = () => {
     const theme = useTheme();
@@ -9,49 +16,95 @@ const AboutMe = () => {
             component="section"
             id="aboutme"
             sx={{
-                py: 2,
-                px: 3,
-                backgroundColor: '#f5f5f5',
-                minHeight: '50vh',
+                py: { xs: 4, sm: 6 },
+                px: { xs: 3, sm: 4, md: 8 },
+                background: 'linear-gradient(135deg, #1a1a1a, #000000)',
+                color: '#ffffff',
+                minHeight: '70vh',
+                width: '100%',
+                borderBottomLeftRadius: '32px',
+                borderBottomRightRadius: '32px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                borderRadius: '16px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                boxShadow: '0 8px 20px rgba(0, 0, 0, 0.5)',
+                marginTop: '-30px',
             }}
         >
-            <Typography variant="h4" component="h2" align="center" gutterBottom>
+            <Typography
+                variant="h4"
+                component="h2"
+                align="center"
+                gutterBottom
+                sx={{
+                    background: 'linear-gradient(45deg, #fc00ff, #00dbde)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    fontWeight: 'bold',
+                }}
+            >
                 Sobre mí
             </Typography>
 
             <Grid
                 container
-                spacing={2}
+                spacing={5}
                 sx={{
-                    mt: 4,
-                    maxWidth: 900,
+                    mt: 2,
                     flexDirection: isSmallScreen ? 'column' : 'row',
                     alignItems: 'center',
                     justifyContent: 'center',
+                    textAlign: 'center',
                 }}
             >
                 <Grid item xs={12} md={4}>
-                    <Typography>
+                    <Typography
+                        variant="body1"
+                        sx={{
+                            color: '#cccccc',
+                            textAlign: isSmallScreen ? 'center' : 'right',
+                        }}
+                    >
                         Información izquierda (o arriba en móvil).
                     </Typography>
                 </Grid>
 
                 <Grid item xs={12} md={4} sx={{ textAlign: 'center' }}>
-                    <Avatar
-                        alt="Tu nombre"
-                        src="/Fondo1.jpg"
-                        sx={{ width: 200, height: 200, border: '4px solid #1976d2', margin: '0 auto' }}
-                    />
+                    <Box
+                        sx={{
+                            width: 410,
+                            height: 410,
+                            borderRadius: '50%',
+                            background: 'linear-gradient(135deg, #fc00ff, #00dbde)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            mx: 'auto',
+                            p: '4px',
+                            boxShadow: '0 0 20px rgba(252, 0, 255, 0.3)',
+                        }}
+                    >
+                        <Avatar
+                            alt="Tu nombre"
+                            src="/Fondo3.png"
+                            sx={{
+                                width: 400,
+                                height: 400,
+                                border: '4px solid #fff',
+                            }}
+                        />
+                    </Box>
                 </Grid>
 
                 <Grid item xs={12} md={4}>
-                    <Typography>
+                    <Typography
+                        variant="body1"
+                        sx={{
+                            color: '#cccccc',
+                            textAlign: isSmallScreen ? 'center' : 'left',
+                        }}
+                    >
                         Información derecha (o abajo en móvil).
                     </Typography>
                 </Grid>
