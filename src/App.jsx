@@ -13,8 +13,8 @@ function App() {
       <main style={{ paddingTop: '120px' }}>
         <AboutMe />
         <SkillsCarousel />
-        <Education />
         <Projects />
+        <Education />
         <Contact />
       </main>
       <Footer />

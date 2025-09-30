@@ -3,11 +3,33 @@ import {
     Timeline,
     TimelineItem,
     TimelineSeparator,
-    TimelineConnector,
     TimelineContent,
     TimelineDot,
     TimelineOppositeContent,
 } from '@mui/lab';
+
+const timelineData = [
+    {
+        fecha: 'JULIO 2025',
+        titulo: 'NEOLAND',
+        descripcion: 'CURSO ANGULAR FRAMEWORK (PRIMENG)',
+    },
+    {
+        fecha: 'SEPTIEMBRE 2024 - FEBRERO 2025',
+        titulo: 'NEOLAND',
+        descripcion: 'BOOTCAMP NEOLAND WEBDEVELOPMENT',
+    },
+    {
+        fecha: 'JUNIO 2024',
+        titulo: 'UDEMY',
+        descripcion: 'DESARROLLO WEB - FRONTEND DEVELOPER',
+    },
+    {
+        fecha: 'ABRIL 2024',
+        titulo: 'UDEMY',
+        descripcion: 'UNIVERSIDAD HTML',
+    },
+];
 
 const Education = () => {
     return (
@@ -24,6 +46,7 @@ const Education = () => {
                 background: 'linear-gradient(135deg, #0f0f0f, #1a1a1a)',
                 borderRadius: '24px',
                 boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.4)',
+                marginBottom: '50px'
             }}
         >
             <Typography
@@ -42,89 +65,61 @@ const Education = () => {
                 Educación
             </Typography>
 
-            <Timeline position="alternate">
-                {/* Timeline Item 1 */}
-                <TimelineItem>
-                    <TimelineOppositeContent
-                        sx={{ color: '#cccccc' }}
-                    >
-                        2023 - Presente
-                    </TimelineOppositeContent>
-                    <TimelineSeparator>
-                        <TimelineDot
-                            sx={{
-                                background: 'linear-gradient(135deg, #fc00ff, #00dbde)',
-                            }}
-                        />
-                        <TimelineConnector
-                            sx={{
-                                background: 'linear-gradient(135deg, #fc00ff, #00dbde)',
-                            }}
-                        />
-                    </TimelineSeparator>
-                    <TimelineContent>
-                        <Paper
-                            elevation={6}
-                            sx={{
-                                p: 2,
-                                background: 'rgba(20, 20, 20, 0.9)',
-                                border: '2px solid transparent',
-                                borderRadius: '12px',
-                                transition: 'all 0.3s ease',
-                                color: '#ffffff',
-                                '&:hover': {
-                                    transform: 'scale(1.03)',
-                                    borderColor: '#fc00ff',
-                                    boxShadow: '0px 0px 18px rgba(252, 0, 255, 0.3)',
-                                },
-                            }}
-                        >
-                            <Typography variant="h6" component="span" sx={{ fontWeight: 'bold' }}>
-                                Empresa 1
-                            </Typography>
-                            <Typography>Frontend Developer</Typography>
-                        </Paper>
-                    </TimelineContent>
-                </TimelineItem>
-
-                {/* Timeline Item 2 */}
-                <TimelineItem>
-                    <TimelineOppositeContent
-                        sx={{ color: '#cccccc' }}
-                    >
-                        2021 - 2023
-                    </TimelineOppositeContent>
-                    <TimelineSeparator>
-                        <TimelineDot
-                            sx={{
-                                background: 'linear-gradient(135deg, #fc00ff, #00dbde)',
-                            }}
-                        />
-                    </TimelineSeparator>
-                    <TimelineContent>
-                        <Paper
-                            elevation={6}
-                            sx={{
-                                p: 2,
-                                background: 'rgba(20, 20, 20, 0.9)',
-                                border: '2px solid transparent',
-                                borderRadius: '12px',
-                                transition: 'all 0.3s ease',
-                                color: '#ffffff',
-                                '&:hover': {
-                                    transform: 'scale(1.03)',
-                                    borderColor: '#00dbde',
-                                    boxShadow: '0px 0px 18px rgba(0, 219, 222, 0.3)',
-                                },
-                            }}
-                        >
-                            <Typography variant="h6" component="span" sx={{ fontWeight: 'bold' }}>
-                                Empresa 2
-                            </Typography>
-                            <Typography>Web Developer</Typography>
-                        </Paper>
-                    </TimelineContent>
-                </TimelineItem>
+            {/* Timeline con línea personalizada */}
+            <Timeline
+                position="alternate"
+                sx={{
+                    position: 'relative',
+                    '&::before': {
+                        content: '""',
+                        position: 'absolute',
+                        top: 0,
+                        bottom: 0,
+                        left: '50%',
+                        width: '2px',
+                        background: 'linear-gradient(135deg, #fc00ff, #00dbde)',
+                        transform: 'translateX(-50%)',
+                    },
+                }}
+            >
+                {timelineData.map((item, index) => (
+                    <TimelineItem key={index} sx={{ mb: 6 }}>
+                        <TimelineOppositeContent sx={{ color: '#cccccc' }}>
+                            {item.fecha}
+                        </TimelineOppositeContent>
+                        <TimelineSeparator>
+                            <TimelineDot
+                                sx={{
+                                    background: 'linear-gradient(135deg, #fc00ff, #00dbde)',
+                                }}
+                            />
+                            {/* No TimelineConnector */}
+                        </TimelineSeparator>
+                        <TimelineContent>
+                            <Paper
+                                elevation={6}
+                                sx={{
+                                    p: 2,
+                                    background: 'rgba(20, 20, 20, 0.9)',
+                                    border: '2px solid transparent',
+                                    borderRadius: '12px',
+                                    transition: 'all 0.3s ease',
+                                    color: '#ffffff',
+                                    '&:hover': {
+                                        transform: 'scale(1.03)',
+                                        borderColor: '#00dbde',
+                                        boxShadow: '0px 0px 18px rgba(0, 219, 222, 0.3)',
+                                    },
+                                }}
+                            >
+                                <Typography variant="h6" component="span" sx={{ fontWeight: 'bold' }}>
+                                    {item.titulo}
+                                </Typography>
+                                <Typography>{item.descripcion}</Typography>
+                            </Paper>
+                        </TimelineContent>
+                    </TimelineItem>
+                ))}
             </Timeline>
         </Box>
     );

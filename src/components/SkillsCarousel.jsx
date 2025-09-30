@@ -36,7 +36,6 @@ const SkillsCarousel = () => {
                 overflow: 'hidden',
                 whiteSpace: 'nowrap',
                 width: '100%',
-                background: '#1a1a1a',
                 py: 3,
                 marginTop: '20px'
             }}
