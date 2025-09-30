@@ -17,7 +17,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link as ScrollLink } from 'react-scroll';
 
-const navItems = ['aboutme', 'education', 'projects', 'contact'];
+const navItems = ['SOBRE MI', 'PROYECTOS', 'EDUCACION', 'CONTACTO'];
 
 
 const Navbar = () => {
@@ -55,10 +55,15 @@ const Navbar = () => {
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     fontWeight: 'bold',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 1,
                 }}
             >
                 Mi Portfolio
             </Typography>
+
 
             <List>
                 {navItems.map((item) => (
@@ -133,10 +138,25 @@ const Navbar = () => {
                             WebkitTextFillColor: 'transparent',
                             fontWeight: 'bold',
                             flexGrow: 1,
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: 3,
                         }}
                     >
+                        <Box
+                            component="img"
+                            src="/logo-navbar.png"
+                            alt="Portfolio Icon"
+                            sx={{
+                                width: 50,
+                                height: 50,
+                                borderRadius: '50%',
+                                objectFit: 'cover',
+                            }}
+                        />
                         Mi Portfolio
                     </Typography>
+
 
                     <Box sx={{ display: { xs: 'none', md: 'block' } }}>
                         <Stack direction="row" spacing={2}>

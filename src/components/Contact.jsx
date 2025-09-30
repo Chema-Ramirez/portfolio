@@ -8,6 +8,7 @@ const PageWrapper = styled.section`
   align-items: center;
   padding: 50px 20px;
   color: #ffffff;
+  font-family: 'Poppins', sans-serif;
 `;
 
 const PageHeadingWrapper = styled.div`
@@ -40,21 +41,25 @@ const ContentWrapper = styled.div`
     flex-direction: column;
     gap: 20px;
   }
+
+  @media (max-width: 480px) {
+    padding: 0 15px;
+  }
 `;
 
 const Contact = () => {
-    return (
-        <PageWrapper id="contact">
-            <PageHeadingWrapper>
-                <Title>Contáctame</Title>
-                <Subtitle>¿Tienes alguna pregunta o comentario? ¡Escríbeme un mensaje!</Subtitle>
-            </PageHeadingWrapper>
-            <ContentWrapper>
-                <DetailsBar />
-                <InputSide />
-            </ContentWrapper>
-        </PageWrapper>
-    );
+  return (
+    <PageWrapper id="CONTACTO">
+      <PageHeadingWrapper>
+        <Title>Contáctame</Title>
+        <Subtitle>¿Tienes alguna pregunta o comentario? ¡Escríbeme un mensaje!</Subtitle>
+      </PageHeadingWrapper>
+      <ContentWrapper>
+        <DetailsBar />
+        <InputSide />
+      </ContentWrapper>
+    </PageWrapper>
+  );
 };
 
 export default Contact;

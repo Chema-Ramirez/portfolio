@@ -22,7 +22,7 @@ const Footer = () => {
             <Typography variant="body1" gutterBottom>
                 Contacto:{' '}
                 <Link
-                    href="mailto:tuemail@ejemplo.com"
+                    href="mailto:josemaria.ramirez.dev@gmail.com"
                     underline="hover"
                     sx={{
                         background: 'linear-gradient(45deg, #fc00ff, #00dbde)',
@@ -35,7 +35,7 @@ const Footer = () => {
                         },
                     }}
                 >
-                    tuemail@ejemplo.com
+                    Josemaria.ramirez.dev@gmail.com
                 </Link>
             </Typography>
 
@@ -46,7 +46,7 @@ const Footer = () => {
                 sx={{ mt: 2, flexWrap: 'wrap' }}
             >
                 <Link
-                    href="https://github.com/tuusuario"
+                    href="https://github.com/Chema-Ramirez"
                     target="_blank"
                     rel="noopener noreferrer"
                     underline="hover"
@@ -64,7 +64,7 @@ const Footer = () => {
                     GitHub
                 </Link>
                 <Link
-                    href="https://linkedin.com/in/tuusuario"
+                    href="https://www.linkedin.com/in/jose-mar%C3%ADa-ramirez-336a3b248/"
                     target="_blank"
                     rel="noopener noreferrer"
                     underline="hover"
@@ -91,7 +91,7 @@ const Footer = () => {
                     color: '#888888',
                 }}
             >
-                &copy; {new Date().getFullYear()} Tu Nombre. Todos los derechos reservados.
+                &copy; {new Date().getFullYear()} Chema Ramirez (2025). Todos los derechos reservados.
             </Typography>
         </Box>
     );

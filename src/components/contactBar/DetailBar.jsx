@@ -11,6 +11,7 @@ const DetailsBarWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: 'Poppins', sans-serif;
 
   @media (max-width: 900px) {
     max-width: 100%;
@@ -51,20 +52,19 @@ const DetailsBar = () => {
 
       <ContactItem>
         <IconWrapper><Phone size={18} /></IconWrapper>
-        <Text>+34 612 345 678</Text>
+        <Text>+34 649 193 888</Text>
       </ContactItem>
 
       <ContactItem>
         <IconWrapper><Mail size={18} /></IconWrapper>
-        <Text>correo@ejemplo.com</Text>
+        <Text>Josemaria.ramirez.dev@gmail.com</Text>
       </ContactItem>
 
       <ContactItem>
         <IconWrapper><MapPin size={18} /></IconWrapper>
-        <Text>Madrid, España</Text>
+        <Text>Jerez de la Frontera (Cádiz), España</Text>
       </ContactItem>
 
-      {/* Puedes añadir redes sociales o un horario */}
     </DetailsBarWrapper>
   );
 };

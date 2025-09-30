@@ -35,7 +35,7 @@ const Education = () => {
     return (
         <Box
             component="section"
-            id="education"
+            id="EDUCACION"
             sx={{
                 mt: 8,
                 py: 6,

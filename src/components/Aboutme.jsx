@@ -25,17 +25,17 @@ const AboutMe = () => {
         {
             name: 'GitHub',
             icon: <GitHubIcon sx={{ color: '#fff', fontSize: 32 }} />,
-            link: 'https://github.com/tuusuario',
+            link: 'https://github.com/Chema-Ramirez',
         },
         {
             name: 'LinkedIn',
             icon: <LinkedInIcon sx={{ color: '#ffffffff', fontSize: 32 }} />,
-            link: 'https://linkedin.com/in/tuusuario',
+            link: 'https://www.linkedin.com/in/jose-mar%C3%ADa-ramirez-336a3b248/',
         },
         {
             name: 'Descargar CV',
             icon: <DownloadIcon sx={{ color: '#ffffffff', fontSize: 32 }} />,
-            link: '/ruta-a-tu-cv.pdf',
+            link: '/JOSE MARIA RAMIREZ QUIROS - CV.pdf',
             download: true,
         },
     ];
@@ -43,7 +43,7 @@ const AboutMe = () => {
     return (
         <Box
             component="section"
-            id="aboutme"
+            id="SOBRE MI"
             sx={{
                 py: { xs: 4, sm: 6 },
                 px: { xs: 3, sm: 4, md: 2 },
@@ -110,7 +110,7 @@ const AboutMe = () => {
                             lineHeight: 1.8,
                         }}
                     >
-                        Me apasiona el{' '}
+                        Bienvenid@ a mi Portfolio web! Mi nombre es Chema. Me apasiona el{' '}
                         <Box component="span" sx={{
                             background: 'linear-gradient(45deg, #fc00ff, #00dbde)',
                             WebkitBackgroundClip: 'text',
