@@ -1,4 +1,4 @@
-import { Box, Grid, Avatar, Typography, IconButton, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Grid, Avatar, Typography, useMediaQuery, useTheme } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import DownloadIcon from '@mui/icons-material/Download';
@@ -24,17 +24,17 @@ const AboutMe = () => {
     const iconsData = [
         {
             name: 'GitHub',
-            icon: <GitHubIcon sx={{ color: '#fff', fontSize: 32 }} />,
+            icon: <GitHubIcon sx={{ color: '#fff', fontSize: { xs: 24, sm: 32 } }} />,
             link: 'https://github.com/Chema-Ramirez',
         },
         {
             name: 'LinkedIn',
-            icon: <LinkedInIcon sx={{ color: '#ffffffff', fontSize: 32 }} />,
+            icon: <LinkedInIcon sx={{ color: '#fff', fontSize: { xs: 24, sm: 32 } }} />,
             link: 'https://www.linkedin.com/in/jose-mar%C3%ADa-ramirez-336a3b248/',
         },
         {
             name: 'Descargar CV',
-            icon: <DownloadIcon sx={{ color: '#ffffffff', fontSize: 32 }} />,
+            icon: <DownloadIcon sx={{ color: '#fff', fontSize: { xs: 24, sm: 32 } }} />,
             link: '/JOSE MARIA RAMIREZ QUIROS - CV.pdf',
             download: true,
         },
@@ -46,7 +46,7 @@ const AboutMe = () => {
             id="SOBRE MI"
             sx={{
                 py: { xs: 4, sm: 6 },
-                px: { xs: 3, sm: 4, md: 2 },
+                px: { xs: 2, sm: 4, md: 2 },
                 background: 'linear-gradient(135deg, #1a1a1a, #000000)',
                 color: '#ffffff',
                 minHeight: '60vh',
@@ -59,6 +59,7 @@ const AboutMe = () => {
                 alignItems: 'center',
                 boxShadow: '0 8px 20px rgba(0, 0, 0, 0.5)',
                 marginTop: '-60px',
+                overflowX: 'hidden',
             }}
         >
             <Typography
@@ -87,8 +88,7 @@ const AboutMe = () => {
                     textAlign: 'center',
                 }}
             >
-
-                {/* Texto dinámico a la izquierda */}
+                {/* Texto dinámico */}
                 <Box
                     sx={{
                         maxWidth: 450,
@@ -100,48 +100,19 @@ const AboutMe = () => {
                         textAlign: isSmallScreen ? 'center' : 'left',
                     }}
                 >
-                    {/* Párrafo 1 */}
-                    <Typography
-                        variant="body1"
-                        sx={{
-                            color: '#cccccc',
-                            fontFamily: 'Poppins, sans-serif',
-                            fontSize: '1rem',
-                            lineHeight: 1.8,
-                        }}
-                    >
+                    <Typography variant="body1" sx={{ color: '#ccc', fontFamily: 'Poppins, sans-serif', fontSize: '1rem', lineHeight: 1.8 }}>
                         Bienvenid@ a mi Portfolio web! Mi nombre es Chema. Me apasiona el{' '}
-                        <Box component="span" sx={{
-                            background: 'linear-gradient(45deg, #fc00ff, #00dbde)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            fontWeight: 'bold',
-                        }}>
+                        <Box component="span" sx={{ background: 'linear-gradient(45deg, #fc00ff, #00dbde)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 'bold' }}>
                             desarrollo web
                         </Box>{' '}
                         y busco oportunidades donde pueda seguir creciendo, aprender{' '}
-                        <Box component="span" sx={{
-                            background: 'linear-gradient(45deg, #00dbde, #fc00ff)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            fontWeight: 'bold',
-                        }}>
+                        <Box component="span" sx={{ background: 'linear-gradient(45deg, #00dbde, #fc00ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 'bold' }}>
                             nuevas tecnologías
                         </Box>{' '}
                         y aportar valor real a los proyectos en los que participo.
                     </Typography>
 
-                    {/* Párrafo 2 */}
-                    <Typography
-                        variant="body1"
-                        sx={{
-                            color: '#cccccc',
-                            fontFamily: 'Poppins, sans-serif',
-                            fontSize: '1rem',
-                            lineHeight: 1.8,
-                            mt: 2,
-                        }}
-                    >
+                    <Typography variant="body1" sx={{ color: '#ccc', fontFamily: 'Poppins, sans-serif', fontSize: '1rem', lineHeight: 1.8, mt: 2 }}>
                         Estoy en constante búsqueda de{' '}
                         <Box component="span" sx={{ fontStyle: 'italic', fontWeight: 500 }}>
                             mejorar mis habilidades
@@ -149,40 +120,24 @@ const AboutMe = () => {
                         y adaptarme a los cambios del sector.
                     </Typography>
 
-                    {/* Párrafo 3 */}
-                    <Typography
-                        variant="body1"
-                        sx={{
-                            color: '#cccccc',
-                            fontFamily: 'Poppins, sans-serif',
-                            fontSize: '1rem',
-                            lineHeight: 1.8,
-                            mt: 2,
-                        }}
-                    >
+                    <Typography variant="body1" sx={{ color: '#ccc', fontFamily: 'Poppins, sans-serif', fontSize: '1rem', lineHeight: 1.8, mt: 2 }}>
                         Disfruto enfrentar{' '}
-                        <Box component="span" sx={{
-                            background: 'linear-gradient(45deg, #fc00ff, #00dbde)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            fontWeight: 'bold',
-                        }}>
+                        <Box component="span" sx={{ background: 'linear-gradient(45deg, #fc00ff, #00dbde)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 'bold' }}>
                             desafíos
                         </Box>{' '}
                         que me impulsen a dar lo mejor de mí como profesional y como parte de un equipo.
                     </Typography>
                 </Box>
 
-
-                {/* Imagen central */}
+                {/* Avatar */}
                 <Grid
                     item
                     xs={12}
                     md={4}
                     sx={{
                         position: 'relative',
-                        width: 410,
-                        height: 410,
+                        width: { xs: 240, sm: 320, md: 410 },
+                        height: { xs: 240, sm: 320, md: 410 },
                         mx: 'auto',
                         display: 'flex',
                         alignItems: 'center',
@@ -192,12 +147,11 @@ const AboutMe = () => {
                         transition: 'opacity 1s ease, transform 1s ease',
                     }}
                 >
-                    {/* Círculo difuminado de fondo */}
                     <Box
                         sx={{
                             position: 'absolute',
-                            width: 410,
-                            height: 410,
+                            width: '100%',
+                            height: '100%',
                             borderRadius: '50%',
                             background: 'linear-gradient(135deg, #fc00ff, #00dbde)',
                             filter: 'blur(40px)',
@@ -205,55 +159,55 @@ const AboutMe = () => {
                             zIndex: 0,
                         }}
                     />
-                    {/* Avatar principal */}
                     <Avatar
                         alt="Tu nombre"
                         src="/Fondo3.png"
                         sx={{
-                            width: 400,
-                            height: 400,
+                            width: '100%',
+                            height: '100%',
                             border: '4px transparent #fff',
                             zIndex: 1,
                         }}
                     />
 
-                    {/* Círculos con enlaces en forma de arco */}
-                    {!isSmallScreen && iconsData.map((item, i) => (
-                        <Box
-                            key={item.name}
-                            component="a"
-                            href={item.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            download={item.download || false}
-                            aria-label={item.name}
-                            sx={{
-                                position: 'absolute',
-                                top: circlesPositions[i].top,
-                                left: circlesPositions[i].left,
-                                width: 70,
-                                height: 70,
-                                borderRadius: '50%',
-                                background: 'linear-gradient(45deg, #fc00ff, #00dbde)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                boxShadow: '0 4px 10px rgba(252, 0, 255, 0.6)',
-                                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                                cursor: 'pointer',
-                                transformOrigin: 'center',
-                                '&:hover': {
-                                    transform: 'scale(1.2)',
-                                    boxShadow: '0 6px 20px rgba(252, 0, 255, 0.9)',
-                                },
-                            }}
-                        >
-                            {item.icon}
-                        </Box>
-                    ))}
+                    {/* Círculos con enlaces - solo en pantallas grandes */}
+                    {!isSmallScreen &&
+                        iconsData.map((item, i) => (
+                            <Box
+                                key={item.name}
+                                component="a"
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                download={item.download || false}
+                                aria-label={item.name}
+                                sx={{
+                                    position: 'absolute',
+                                    top: circlesPositions[i].top,
+                                    left: circlesPositions[i].left,
+                                    width: 70,
+                                    height: 70,
+                                    borderRadius: '50%',
+                                    background: 'linear-gradient(45deg, #fc00ff, #00dbde)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    boxShadow: '0 4px 10px rgba(252, 0, 255, 0.6)',
+                                    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                                    cursor: 'pointer',
+                                    transformOrigin: 'center',
+                                    '&:hover': {
+                                        transform: 'scale(1.2)',
+                                        boxShadow: '0 6px 20px rgba(252, 0, 255, 0.9)',
+                                    },
+                                }}
+                            >
+                                {item.icon}
+                            </Box>
+                        ))}
                 </Grid>
 
-                {/* Columna derecha para móvil */}
+                {/* Íconos para móviles debajo */}
                 {isSmallScreen && (
                     <Grid item xs={12} sx={{ mt: 4, textAlign: 'center' }}>
                         {iconsData.map((item) => (
@@ -267,8 +221,8 @@ const AboutMe = () => {
                                 aria-label={item.name}
                                 sx={{
                                     display: 'inline-flex',
-                                    width: 60,
-                                    height: 60,
+                                    width: { xs: 50, sm: 60 },
+                                    height: { xs: 50, sm: 60 },
                                     borderRadius: '50%',
                                     background: 'linear-gradient(45deg, #fc00ff, #00dbde)',
                                     alignItems: 'center',

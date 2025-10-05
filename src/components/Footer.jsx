@@ -5,7 +5,7 @@ const Footer = () => {
         <Box
             component="footer"
             sx={{
-                mt: 4,
+                mt: 6,
                 py: 4,
                 px: 3,
                 background: 'linear-gradient(135deg, #000000, #1a1a1a)',
@@ -13,7 +13,7 @@ const Footer = () => {
                 borderTopLeftRadius: '32px',
                 borderTopRightRadius: '32px',
                 textAlign: 'center',
-                width: '100%',
+                width: '85%',
                 maxWidth: 1800,
                 mx: 'auto',
                 boxShadow: '0 -4px 20px rgba(0,0,0,0.5)',
@@ -41,9 +41,9 @@ const Footer = () => {
 
             <Stack
                 direction="row"
-                spacing={3}
+                spacing={4}
                 justifyContent="center"
-                sx={{ mt: 2, flexWrap: 'wrap' }}
+                sx={{ mt: 6, flexWrap: 'wrap' }}
             >
                 <Link
                     href="https://github.com/Chema-Ramirez"
@@ -87,7 +87,7 @@ const Footer = () => {
                 variant="caption"
                 display="block"
                 sx={{
-                    mt: 3,
+                    mt: 4,
                     color: '#888888',
                 }}
             >

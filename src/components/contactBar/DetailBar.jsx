@@ -4,9 +4,9 @@ import { Phone, Mail, MapPin } from 'react-feather';
 const DetailsBarWrapper = styled.div`
   background-color: #1a1a1a;
   border-radius: 10px;
-  padding: 5px 25px 150px 25px;
+  padding: 50px 25px 100px 25px;
   flex: 1;
-  max-width: 350px;
+  max-width: 300px;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@ const DetailsBarWrapper = styled.div`
 
   @media (max-width: 900px) {
     max-width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 `;
 

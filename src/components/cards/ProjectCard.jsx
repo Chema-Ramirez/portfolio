@@ -26,7 +26,8 @@ const StyledWrapper = styled.div`
   .card {
     position: relative;
     z-index: 1;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     background-color: #000;
     border-radius: 8px;
     overflow: visible;
@@ -34,38 +35,41 @@ const StyledWrapper = styled.div`
     color: white;
     user-select: none;
     display: flex;
-    height:90%;
     flex-direction: column;
     box-shadow: 0 0 15px rgba(232, 27, 255, 0.7);
     transition: transform 0.3s ease;
-    margin: 16px;
+    margin: 16px auto;
     font-family: 'Poppins', sans-serif;
+    height: 90%;
   }
 
   .card:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 
   .thumbnail {
-  width: calc(100% - 32px); /* 100% menos 16px a cada lado */
-  height: 180px;
-  object-fit: cover;
-  margin: 0 auto; /* centra la imagen */
-  border-radius: 6px;
-  display: block;
-}
+    width: calc(100% - 32px);
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    margin: 40px auto;
+    border-radius: 80px;
+    display: block;
+  }
 
   .content {
+  margin-top: -20px;
     padding: 16px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    color:  #000;
+    color: #000;
   }
 
   .heading {
-    font-size: 22px;
+  font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 8px;
     text-transform: capitalize;
@@ -73,28 +77,28 @@ const StyledWrapper = styled.div`
   }
 
   p:not(.heading) {
-    font-size: 14px;
+    font-size: 0.95rem;
     margin-bottom: 12px;
-    flex-grow: 1;
     color: #000;
+    line-height: 1.5;
   }
 
   .links {
-  color: #000;
     display: flex;
-    gap: 12px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
   }
 
   .links a {
-    background-color: #3C3C3C;
-     color: #fff;
+    background-color: #3c3c3c;
+    color: #fff;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 0.85rem;
     text-decoration: none;
-    border: 1.5px solid #e81cff;
+    border: 1.5px solid #000;
     padding: 6px 12px;
     border-radius: 6px;
-    border-color: #000;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
@@ -103,13 +107,12 @@ const StyledWrapper = styled.div`
     color: #40c9ff;
   }
 
-  /* Gradientes y efectos de fondo como antes */
   .card::before {
     content: '';
     position: absolute;
-    top: -25px;
-    width: 300px; 
-    height: 480px; 
+    top: 10px;
+    width: 100%;
+    height: 95%;
     border-radius: 60px;
     background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
     z-index: -10;
@@ -136,11 +139,28 @@ const StyledWrapper = styled.div`
   }
 
   /* Responsive */
-  @media (max-width: 600px) {
+  @media (max-width: 450px) {
     .card {
-      width: 100%;
+      max-width: 70%;
+      margin: 16px auto;
     }
 
+    .thumbnail {
+      width: 85%;
+    }
+
+    .heading {
+      font-size: 1.2rem;
+    }
+
+    .links {
+      justify-content: center;
+    }
+
+    .links a {
+      font-size: 0.8rem;
+      padding: 6px 5px;
+    }
   }
 `;
 

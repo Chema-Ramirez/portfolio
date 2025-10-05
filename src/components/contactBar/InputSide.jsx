@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const InputSideWrapper = styled.form`
   width: 100%;
-  max-width: 700px;
+  max-width: 670px;
   padding: 20px;
   margin: 0 auto;
   font-family: 'Poppins', sans-serif;
@@ -26,7 +26,7 @@ const Input = styled.input`
   font-size: 1rem; /* usa rem en lugar de px */
   padding: 0.75rem;
   color: #ffffff;
-  width: 100%;
+  width: 80%;
   font-size: 16px;
   padding: 12px;
   border: 1.5px solid #00dbde;
@@ -43,7 +43,7 @@ const Input = styled.input`
 
 const MessageInput = styled.textarea`
   color: #ffffff;
-  width: 100%;
+  width: 85%;
   font-size: 16px;
   padding: 12px;
   border: 1.5px solid #00dbde;
