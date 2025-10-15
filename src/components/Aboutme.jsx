@@ -30,7 +30,7 @@ const AboutMe = () => {
         {
             name: 'LinkedIn',
             icon: <LinkedInIcon sx={{ color: '#fff', fontSize: { xs: 24, sm: 32 } }} />,
-            link: 'https://www.linkedin.com/in/jose-mar%C3%ADa-ramirez-336a3b248/',
+            link: 'https://www.linkedin.com/in/chema-ramirez/',
         },
         {
             name: 'Descargar CV',

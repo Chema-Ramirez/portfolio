@@ -64,7 +64,7 @@ const Footer = () => {
                     GitHub
                 </Link>
                 <Link
-                    href="https://www.linkedin.com/in/jose-mar%C3%ADa-ramirez-336a3b248/"
+                    href="https://www.linkedin.com/in/chema-ramirez/"
                     target="_blank"
                     rel="noopener noreferrer"
                     underline="hover"
