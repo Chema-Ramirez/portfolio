@@ -1,16 +1,31 @@
-# React + Vite
+# Portfolio Web Personal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido a mi Portfolio Web! Este proyecto es un espacio donde muestro mis habilidades, proyectos y experiencia como desarrollador frontend, aplicando buenas prácticas y tecnologías modernas.
 
-Currently, two official plugins are available:
+## Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Vite** — entorno de desarrollo rápido y optimizado.
+- **React** — arquitectura basada en componentes reutilizables.
+- **Material UI** — diseño consistente, responsive y profesional.
+- **CSS y animaciones personalizadas** — microinteracciones que mejoran la experiencia de usuario.
+- **react-scroll** — navegación fluida y transiciones suaves entre secciones.
 
-## React Compiler
+## Características principales
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Diseño 100% responsive, adaptado a dispositivos móviles y escritorio.
+- Navbar con menú hamburguesa y Drawer lateral para navegación en móviles.
+- Carrusel animado e infinito para mostrar habilidades técnicas.
+- Código organizado en componentes modulares, con estilos gestionados mediante el sistema `sx` de Material UI.
+- Navegación con scroll suave para mejorar la experiencia de usuario.
 
-## Expanding the ESLint configuration
+## Uso
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Navega entre las secciones “Sobre mí”, “Proyectos”, “Educación” y “Contacto” mediante la barra de navegación o el menú lateral en dispositivos móviles. Explora el carrusel para ver mis principales tecnologías y habilidades.
+
+## Contribuciones
+
+Este es un proyecto personal, pero si quieres aportar ideas o mejoras, ¡serán bienvenidas! Puedes abrir un issue o enviar un pull request.
+
+## Despliegue
+
+El proyecto está desplegado y accesible públicamente en: https://chema-ramirez.netlify.app/
