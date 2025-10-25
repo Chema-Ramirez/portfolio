@@ -7,7 +7,7 @@ const projects = [
         description:
             'Proyecto Final Bootcamp: Node.js, React.js, MongoDB, JavaScript, JWT, Bcrypt y Postman',
         linkGithub: 'https://github.com/Chema-Ramirez/Proyecto-VirtualStore',
-        linkLinkedin: 'https://www.linkedin.com/in/jose-mar%C3%ADa-ramirez-336a3b248/',
+        linkLinkedin: 'https://www.linkedin.com/posts/chema-ramirez_proyecto-final-de-bootcamp-virtualstore-activity-7387114232871456768-4wac?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD1gtxoBbkEWjDGIWa4rklwEzc4WMPebQtQ',
         thumbnail: 'projects/virtual.PNG',
     },
     {
@@ -15,7 +15,7 @@ const projects = [
         description:
             'HTML5, CSS3 JavaScript moderno y ES2024; Flexbox y CSS Grid Layout; Animaciones, transiciones y diseño avanzado.',
         linkGithub: 'https://github.com/Chema-Ramirez/html-css-js-practice',
-        linkLinkedin: 'https://www.linkedin.com/posts/jose-mar%C3%ADa-ramirez-336a3b248_desarrolloweb-frontend-html5-activity-7332844973731508224-tHA3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD1gtxoBbkEWjDGIWa4rklwEzc4WMPebQtQ',
+        linkLinkedin: 'https://www.linkedin.com/posts/chema-ramirez_desarrolloweb-frontend-html5-activity-7332844973731508224-7dyn?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD1gtxoBbkEWjDGIWa4rklwEzc4WMPebQtQ',
         thumbnail: '/projects/html-css-js.PNG',
     },
     {
@@ -23,7 +23,7 @@ const projects = [
         description:
             'HTML5 & CSS3, JavaScript, PokéAPI, Aspecto visual y diseño; Búsqueda avanzada; Vista detallada; Interfaz amigable.',
         linkGithub: 'https://github.com/Chema-Ramirez/Pokedex-PokeProyecto',
-        linkLinkedin: 'https://www.linkedin.com/posts/jose-mar%C3%ADa-ramirez-336a3b248_hace-aproximadamente-1-mes-que-finalic%C3%A9-mi-activity-7312922382929686528-K7WC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD1gtxoBbkEWjDGIWa4rklwEzc4WMPebQtQ',
+        linkLinkedin: 'https://www.linkedin.com/posts/chema-ramirez_hace-aproximadamente-1-mes-que-finalic%C3%A9-mi-activity-7312922382929686528-Vq78?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD1gtxoBbkEWjDGIWa4rklwEzc4WMPebQtQ',
         thumbnail: 'projects/pokemon.PNG',
     },
 ];
