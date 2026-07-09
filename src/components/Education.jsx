@@ -2,25 +2,40 @@ import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
 
 const timelineData = [
     {
-        fecha: 'JULIO 2025',
-        titulo: 'NEOLAND',
-        descripcion: 'CURSO ANGULAR FRAMEWORK (PRIMENG)',
+        fecha: 'ABR.2026 - JUL.2026',
+        titulo: 'PHP NATIVO, JAVASCRIPT Y LARAVEL',
+        descripcion: 'SEPE - PUE',
     },
     {
-        fecha: 'SEPTIEMBRE 2024 - FEBRERO 2025',
-        titulo: 'NEOLAND',
-        descripcion: 'BOOTCAMP NEOLAND WEBDEVELOPMENT',
+        fecha: 'OCT.2025 DIC.2025',
+        titulo: 'JAVASCRIPT',
+        descripcion: 'UDEMY',
     },
     {
-        fecha: 'JUNIO 2024',
-        titulo: 'UDEMY',
-        descripcion: 'DESARROLLO WEB - FRONTEND DEVELOPER',
+        fecha: 'JUL.2025 - AGOST.2025',
+        titulo: 'ANGULAR FRAMEWORK (PRIMENG)',
+        descripcion: 'NEOLAND',
     },
     {
-        fecha: 'ABRIL 2024',
-        titulo: 'UDEMY',
-        descripcion: 'UNIVERSIDAD HTML',
+        fecha: '2024 - 2025',
+        titulo: 'BOOTCAMP NEOLAND WEBDEVELOPMENT',
+        descripcion: 'NEOLAND',
     },
+    {
+        fecha: 'JUN.2024 - SEPT.2024',
+        titulo: 'DESARROLLO WEB - FRONTEND DEVELOPER',
+        descripcion: 'UDEMY',
+    },
+    {
+        fecha: 'ABR.2024 - JUN.2024',
+        titulo: 'HTML',
+        descripcion: 'UDEMY',
+    },
+    {
+        fecha: '2015-2017',
+        titulo: 'DETECTIVE PRIVADO',
+        descripcion: 'UNIV. ALMERIA',
+    }
 ];
 
 const Education = () => {
