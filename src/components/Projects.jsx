@@ -3,6 +3,14 @@ import ProjectCard from './cards/ProjectCard';
 
 const projects = [
     {
+        title: 'Proyecto BitOink',
+        description:
+            'Aplicación web: Node.js, React.js, MongoDB, JavaScript, JWT, Bcrypt y Postman',
+        linkGithub: 'https://github.com/Chema-Ramirez/expense-tracker',
+        linkLinkedin: 'https://bitoink.netlify.app/login',
+        thumbnail: '/projects/bitoink.PNG',
+    },
+    {
         title: 'Proyecto VirtualStore',
         description:
             'Proyecto Final Bootcamp: Node.js, React.js, MongoDB, JavaScript, JWT, Bcrypt y Postman',
