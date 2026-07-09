@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme, useMediaQuery, Divider } from '@mui/material';
+import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
 
 const timelineData = [
     {
@@ -34,14 +34,15 @@ const Education = () => {
             sx={{
                 mt: 8,
                 py: 6,
-                px: { xs: 1, sm: 2 },
-                width: '75%',
+                px: { xs: 2, sm: 4 },
+                width: '100%',
                 maxWidth: '900px',
                 mx: 'auto',
                 background: 'linear-gradient(135deg, #0f0f0f, #1a1a1a)',
                 borderRadius: '24px',
                 boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.4)',
                 fontFamily: 'Poppins, sans-serif',
+                boxSizing: 'border-box'
             }}
         >
             <Typography
@@ -52,27 +53,27 @@ const Education = () => {
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     fontWeight: 'bold',
-                    mb: 6,
+                    mb: 8,
                     fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
                 }}
             >
                 Educación
             </Typography>
 
-            <Box sx={{ position: 'relative', ml: isSmallScreen ? 2 : 0 }}>
+            <Box sx={{ position: 'relative', width: '100%' }}>
+
                 <Box
                     sx={{
                         position: 'absolute',
                         top: 0,
-                        left: isSmallScreen ? '8px' : '50%',
+                        bottom: 0,
+                        left: isSmallScreen ? '15px' : '50%',
                         width: '2px',
-                        height: '100%',
                         background: 'linear-gradient(180deg, #fc00ff, #00dbde)',
                         transform: isSmallScreen ? 'none' : 'translateX(-50%)',
                     }}
                 />
 
-                {/* Items */}
                 {timelineData.map((item, index) => {
                     const isEven = index % 2 === 0;
 
@@ -80,50 +81,44 @@ const Education = () => {
                         <Box
                             key={index}
                             sx={{
-                                position: 'relative',
                                 display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: isSmallScreen
+                                width: '100%',
+                                justifyContent: isSmallScreen
                                     ? 'flex-start'
-                                    : isEven
-                                        ? 'flex-end'
-                                        : 'flex-start',
-                                pl: isSmallScreen ? 4 : 0,
-                                pr: isSmallScreen ? 0 : 4,
-                                mb: 8,
+                                    : isEven ? 'flex-start' : 'flex-end',
+                                alignItems: 'center',
+                                mb: 6,
+                                position: 'relative'
                             }}
                         >
-                            {/* Punto del timeline */}
                             <Box
                                 sx={{
                                     position: 'absolute',
-                                    top: '8px',
-                                    left: isSmallScreen ? '0px' : '50%',
-                                    transform: isSmallScreen
-                                        ? 'none'
-                                        : 'translateX(-50%)',
+                                    top: '50%',
+                                    left: isSmallScreen ? '15px' : '50%',
+                                    transform: 'translate(-50%, -50%)',
                                     width: '14px',
                                     height: '14px',
                                     borderRadius: '50%',
                                     background: 'linear-gradient(135deg, #fc00ff, #00dbde)',
                                     border: '2px solid #fff',
-                                    zIndex: 1,
+                                    zIndex: 2,
                                 }}
                             />
 
-                            {/* Contenido */}
                             <Box
                                 sx={{
+                                    width: { xs: 'calc(100% - 40px)', sm: '44%' },
+                                    ml: isSmallScreen ? '40px' : 0,
                                     background: 'rgba(20, 20, 20, 0.9)',
                                     border: '1px solid #333',
                                     borderRadius: '12px',
-                                    p: 2,
-                                    maxWidth: '500px',
-                                    width: '75%',
+                                    p: 2.5,
                                     boxShadow: '0px 0px 12px rgba(0,219,222,0.1)',
-                                    transition: '0.3s',
+                                    transition: 'all 0.3s ease',
+                                    boxSizing: 'border-box',
                                     '&:hover': {
-                                        transform: 'scale(1.02)',
+                                        transform: 'scale(1.03)',
                                         borderColor: '#00dbde',
                                         boxShadow: '0px 0px 18px rgba(0, 219, 222, 0.3)',
                                     },
@@ -131,7 +126,7 @@ const Education = () => {
                             >
                                 <Typography
                                     variant="subtitle2"
-                                    sx={{ color: '#cccccc', mb: 1 }}
+                                    sx={{ color: '#00dbde', fontWeight: 'bold', mb: 0.5, letterSpacing: '1px' }}
                                 >
                                     {item.fecha}
                                 </Typography>
@@ -145,7 +140,7 @@ const Education = () => {
                                 >
                                     {item.titulo}
                                 </Typography>
-                                <Typography sx={{ mt: 1, fontSize: '0.95rem', color: '#ddd' }}>
+                                <Typography sx={{ mt: 1, fontSize: '0.9rem', color: '#bbb', lineHeight: 1.5 }}>
                                     {item.descripcion}
                                 </Typography>
                             </Box>

@@ -8,7 +8,7 @@ const projects = [
             'Proyecto Final Bootcamp: Node.js, React.js, MongoDB, JavaScript, JWT, Bcrypt y Postman',
         linkGithub: 'https://github.com/Chema-Ramirez/Proyecto-VirtualStore',
         linkLinkedin: 'https://www.linkedin.com/posts/chema-ramirez_proyecto-final-de-bootcamp-virtualstore-activity-7387114232871456768-4wac?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD1gtxoBbkEWjDGIWa4rklwEzc4WMPebQtQ',
-        thumbnail: 'projects/virtual.PNG',
+        thumbnail: '/projects/virtual.PNG',
     },
     {
         title: 'Proyecto HTML, CSS y JS',
@@ -24,7 +24,7 @@ const projects = [
             'HTML5 & CSS3, JavaScript, PokéAPI, Aspecto visual y diseño; Búsqueda avanzada; Vista detallada; Interfaz amigable.',
         linkGithub: 'https://github.com/Chema-Ramirez/Pokedex-PokeProyecto',
         linkLinkedin: 'https://www.linkedin.com/posts/chema-ramirez_hace-aproximadamente-1-mes-que-finalic%C3%A9-mi-activity-7312922382929686528-Vq78?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD1gtxoBbkEWjDGIWa4rklwEzc4WMPebQtQ',
-        thumbnail: 'projects/pokemon.PNG',
+        thumbnail: '/projects/pokemon.PNG',
     },
 ];
 
@@ -35,7 +35,7 @@ const Projects = () => {
             id="PROYECTOS"
             sx={{
                 py: { xs: 4, sm: 6, md: 8 },
-                px: { xs: 2, sm: 0, md: 4 },
+                px: { xs: 2, sm: 4, md: 6 },
                 width: '100%',
                 maxWidth: 1300,
                 mx: 'auto',
@@ -54,14 +54,19 @@ const Projects = () => {
                     WebkitTextFillColor: 'transparent',
                     fontWeight: 'bold',
                     fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
+                    mb: 6,
+                    mt: { xs: 2, sm: 0 },
                 }}
-                marginBottom={8}
-                marginTop={{ xs: -4, sm: -6 }}
             >
                 Proyectos
             </Typography>
 
-            <Grid container spacing={{ xs: 12, sm: 10, md: 6 }} justifyContent="center">
+            <Grid
+                container
+                spacing={{ xs: 4, sm: 4, md: 4 }}
+                justifyContent="center"
+                alignItems="stretch"
+            >
                 {projects.map((project, index) => (
                     <Grid
                         item
@@ -69,7 +74,7 @@ const Projects = () => {
                         xs={12}
                         sm={6}
                         md={4}
-                        lg={3}
+                        lg={4}
                         sx={{ display: 'flex', justifyContent: 'center' }}
                     >
                         <ProjectCard

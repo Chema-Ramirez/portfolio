@@ -3,8 +3,7 @@ import styled from 'styled-components';
 const InputSideWrapper = styled.form`
   width: 100%;
   max-width: 670px;
-  padding: 20px;
-  margin: 0 auto;
+  padding: 10px 20px;
   font-family: 'Poppins', sans-serif;
 `;
 
@@ -15,65 +14,83 @@ const InputWrapper = styled.div`
 `;
 
 const Label = styled.label`
-  color: #ffffff;
-  font-weight: 500;
+  color: #e0e0e0; 
+  font-weight: 600;
   margin-bottom: 8px;
-  font-size: 15px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
 `;
 
 const Input = styled.input`
-  width: 100%;
-  font-size: 1rem; /* usa rem en lugar de px */
-  padding: 0.75rem;
-  color: #ffffff;
-  width: 80%;
-  font-size: 16px;
+  width: 100%; 
+  font-size: 15px;
   padding: 12px;
+  color: #ffffff;
   border: 1.5px solid #00dbde;
   background-color: #1a1a1a;
   border-radius: 6px;
   outline: none;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
   font-family: 'Poppins', sans-serif;
+  box-sizing: border-box; 
 
   &:focus {
     border-color: #fc00ff;
+    box-shadow: 0 0 8px rgba(252, 0, 255, 0.2);
+  }
+
+  &::placeholder {
+    color: #888888;
+    opacity: 1;
   }
 `;
 
 const MessageInput = styled.textarea`
+  width: 100%; 
   color: #ffffff;
-  width: 85%;
-  font-size: 16px;
+  font-size: 15px;
   padding: 12px;
   border: 1.5px solid #00dbde;
   background-color: #1a1a1a;
   border-radius: 6px;
   resize: vertical;
   outline: none;
-  transition: border-color 0.3s ease;
-  min-height: 150px;
+  transition: all 0.3s ease;
+  min-height: 140px;
   font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 
   &:focus {
     border-color: #fc00ff;
+    box-shadow: 0 0 8px rgba(252, 0, 255, 0.2);
+  }
+
+  &::placeholder {
+    color: #888888;
+    opacity: 1;
   }
 `;
 
 const SubmitButton = styled.button`
+  width: 100%; 
   margin-top: 10px;
   background: linear-gradient(45deg, #fc00ff, #00dbde);
   border: none;
   color: white;
-  padding: 12px 24px;
+  padding: 14px 24px;
   font-size: 16px;
+  font-weight: 600;
   font-family: 'Poppins', sans-serif;
   border-radius: 6px;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  transition: transform 0.2s ease, opacity 0.3s ease;
 
   &:hover {
-    opacity: 0.85;
+    opacity: 0.95;
+    transform: translateY(-1px);
+
+  &:active {
+    transform: translateY(1px);
   }
 
   &:disabled {

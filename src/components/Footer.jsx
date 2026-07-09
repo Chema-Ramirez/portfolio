@@ -13,10 +13,11 @@ const Footer = () => {
                 borderTopLeftRadius: '32px',
                 borderTopRightRadius: '32px',
                 textAlign: 'center',
-                width: '85%',
+                width: { xs: '100%', sm: '90%', md: '85%' },
                 maxWidth: 1800,
                 mx: 'auto',
                 boxShadow: '0 -4px 20px rgba(0,0,0,0.5)',
+                boxSizing: 'border-box',
             }}
         >
             <Typography variant="body1" gutterBottom>
@@ -43,7 +44,7 @@ const Footer = () => {
                 direction="row"
                 spacing={4}
                 justifyContent="center"
-                sx={{ mt: 6, flexWrap: 'wrap' }}
+                sx={{ mt: 4, flexWrap: 'wrap' }}
             >
                 <Link
                     href="https://github.com/Chema-Ramirez"
@@ -91,7 +92,7 @@ const Footer = () => {
                     color: '#888888',
                 }}
             >
-                &copy; {new Date().getFullYear()} Chema Ramirez (2025). Todos los derechos reservados.
+                &copy; {new Date().getFullYear()} Chema Ramirez. Todos los derechos reservados.
             </Typography>
         </Box>
     );

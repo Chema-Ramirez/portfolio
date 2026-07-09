@@ -19,12 +19,11 @@ import { Link as ScrollLink } from 'react-scroll';
 
 const navItems = ['SOBRE MI', 'PROYECTOS', 'EDUCACION', 'CONTACTO'];
 
-
 const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
     const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
-    const drawer = (
+    const renderDrawer = (
         <Box
             sx={{
                 width: 250,
@@ -64,7 +63,6 @@ const Navbar = () => {
                 Mi Portfolio
             </Typography>
 
-
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item} disablePadding>
@@ -74,6 +72,7 @@ const Navbar = () => {
                             duration={500}
                             offset={-70}
                             onClick={handleDrawerToggle}
+                            style={{ width: '100%' }}
                         >
                             <ListItemButton
                                 sx={{
@@ -86,7 +85,7 @@ const Navbar = () => {
                             >
                                 <ListItemText
                                     primary={
-                                        item.charAt(0).toUpperCase() + item.slice(1)
+                                        item.charAt(0).toUpperCase() + item.slice(1).toLowerCase()
                                     }
                                 />
                             </ListItemButton>
@@ -157,7 +156,6 @@ const Navbar = () => {
                         Mi Portfolio
                     </Typography>
 
-
                     <Box sx={{ display: { xs: 'none', md: 'block' } }}>
                         <Stack direction="row" spacing={2}>
                             {navItems.map((section) => (
@@ -203,7 +201,7 @@ const Navbar = () => {
                                             },
                                         }}
                                     >
-                                        {section.charAt(0).toUpperCase() + section.slice(1)}
+                                        {section.charAt(0).toUpperCase() + section.slice(1).toLowerCase()}
                                     </Button>
                                 </ScrollLink>
                             ))}
@@ -227,11 +225,10 @@ const Navbar = () => {
                     },
                 }}
             >
-                {drawer}
+                {renderDrawer}
             </Drawer>
         </>
     );
 };
-
 
 export default Navbar;

@@ -3,19 +3,8 @@ import { Box } from '@mui/material';
 const languages = [
     { name: 'JavaScript', icon: '/js.png' },
     { name: 'TypeScript', icon: '/ts.png' },
-    { name: 'MongoDB', icon: '/mongo.png' },
-    { name: 'Github', icon: '/github.png' },
-    { name: 'Angular', icon: '/angular.png' },
-    { name: 'HTML', icon: '/html-5.png' },
-    { name: 'CSS', icon: '/css-3.png' },
-    { name: 'Node.js', icon: '/nodejs.png' },
-    { name: 'React', icon: '/react.png' },
-    { name: 'VueJS', icon: '/vue.png' },
-    { name: 'Tailwind', icon: '/tailwind.png' },
-    { name: 'MaterialUI', icon: '/mui.png' },
-    { name: 'VisualStudioCode', icon: '/vscode.png' },
-    { name: 'JavaScript', icon: '/js.png' },
-    { name: 'TypeScript', icon: '/ts.png' },
+    { name: 'PHP', icon: '/php.png' },
+    { name: 'Laravel', icon: '/laravel.png' },
     { name: 'MongoDB', icon: '/mongo.png' },
     { name: 'Github', icon: '/github.png' },
     { name: 'Angular', icon: '/angular.png' },
@@ -43,14 +32,13 @@ const SkillsCarousel = () => {
             <Box
                 sx={{
                     display: 'inline-block',
-                    animation: 'scroll 25s linear infinite',
+                    animation: 'scroll 30s linear infinite',
                     '@keyframes scroll': {
                         '0%': { transform: 'translateX(0)' },
                         '100%': { transform: 'translateX(-50%)' },
                     },
                 }}
             >
-
                 {[...languages, ...languages].map((lang, index) => (
                     <Box
                         key={index}

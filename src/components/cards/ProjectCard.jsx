@@ -6,8 +6,10 @@ const ProjectCard = ({ title, description, linkGithub, linkLinkedin, thumbnail }
       <div className="card">
         <img src={thumbnail} alt={`${title} thumbnail`} className="thumbnail" />
         <div className="content">
-          <p className="heading">{title}</p>
-          <p>{description}</p>
+          <div>
+            <p className="heading">{title}</p>
+            <p className="description">{description}</p>
+          </div>
           <div className="links">
             <a href={linkGithub} target="_blank" rel="noopener noreferrer" className="github">
               Ver en GitHub
@@ -28,19 +30,19 @@ const StyledWrapper = styled.div`
     z-index: 1;
     width: 100%;
     max-width: 300px;
-    background-color: #000;
+    background-color: #0d0d0d; 
     border-radius: 8px;
     overflow: visible;
     cursor: default;
-    color: white;
+    color: #fff; 
     user-select: none;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 15px rgba(232, 27, 255, 0.7);
+    box-shadow: 0 0 15px rgba(232, 27, 255, 0.4);
     transition: transform 0.3s ease;
     margin: 16px auto;
     font-family: 'Poppins', sans-serif;
-    height: 90%;
+    height: 400px; 
   }
 
   .card:hover {
@@ -49,37 +51,34 @@ const StyledWrapper = styled.div`
 
   .thumbnail {
     width: calc(100% - 32px);
-    height: auto;
-    max-height: 200px;
+    height: 150px;
     object-fit: cover;
-    margin: 40px auto;
-    border-radius: 80px;
+    margin: 16px auto 0 auto; 
+    border-radius: 12px; 
     display: block;
   }
 
   .content {
-  margin-top: -20px;
     padding: 16px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    color: #000;
   }
 
   .heading {
-  font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 8px;
     text-transform: capitalize;
-    color: #000;
+    color: #fff; 
   }
 
-  p:not(.heading) {
-    font-size: 0.95rem;
+  .description {
+    font-size: 0.90rem;
     margin-bottom: 12px;
-    color: #000;
+    color: #ccc; 
     line-height: 1.5;
   }
 
@@ -87,35 +86,40 @@ const StyledWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: auto; 
   }
 
   .links a {
-    background-color: #3c3c3c;
+    background-color: #1f1f1f;
     color: #fff;
     font-weight: 600;
     font-size: 0.85rem;
     text-decoration: none;
-    border: 1.5px solid #000;
+    border: 1.5px solid #333;
     padding: 6px 12px;
     border-radius: 6px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: all 0.3s ease;
+    flex: 1; 
+    text-align: center;
   }
 
   .links a:hover {
-    background-color: #000;
-    color: #40c9ff;
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
   }
 
+  /* Efectos de fondo flotantes */
   .card::before {
     content: '';
     position: absolute;
     top: 10px;
+    left: 0;
     width: 100%;
     height: 95%;
-    border-radius: 60px;
+    border-radius: 8px;
     background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
-    z-index: -10;
+    z-index: -2;
     pointer-events: none;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
@@ -128,38 +132,31 @@ const StyledWrapper = styled.div`
     background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
     transform: translate3d(0, 0, 0) scale(0.95);
     filter: blur(20px);
+    opacity: 0.6;
   }
 
   .card:hover::after {
-    filter: blur(30px);
+    filter: blur(25px);
+    opacity: 0.9;
   }
 
   .card:hover::before {
-    transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+    transform: rotate(-3deg) scale(1.05); 
   }
 
   /* Responsive */
   @media (max-width: 450px) {
     .card {
-      max-width: 70%;
-      margin: 16px auto;
+      max-width: 90%;
     }
 
     .thumbnail {
-      width: 85%;
-    }
-
-    .heading {
-      font-size: 1.2rem;
-    }
-
-    .links {
-      justify-content: center;
+      width: calc(100% - 24px);
     }
 
     .links a {
       font-size: 0.8rem;
-      padding: 6px 5px;
+      padding: 8px 4px;
     }
   }
 `;
